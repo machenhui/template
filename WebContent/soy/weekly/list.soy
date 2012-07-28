@@ -1,0 +1,16 @@
+{namespace renren.weekly}
+/**
+ * Says hello to a person.
+ * @param list 工作计划列表
+ */
+{template .list}
+	<ul>
+		{foreach $item in $list}
+			{call renren.weekly.item  }
+				{param item:$item /}
+			{/call}
+		{ifempty}
+			0
+		{/foreach}
+	</ul>
+{/template}

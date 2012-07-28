@@ -1,0 +1,26 @@
+
+{namespace xnTemplate.feed}
+/**
+ * Feed: 状态 type:status  
+ * @param feed 新鲜事
+ */
+{template .defaultFeed}
+ 		<p><img src="{$feed.head_url}"/>{$feed.title}{$feed.type}</p>
+  	    {if $feed.description!=null}
+  	    <span style="color:red;">{$feed.description}</span>
+  	    {/if}
+  	    
+  	    {if $feed.status_forward != null}
+				<p class="forward">
+					<title>{$feed.status_forward.owner_name}</title>
+					<span>{$feed.status_forward.status}</span>
+				</p>
+  	    {/if}
+  	    <a class="f" href="/status/{$feed.user_id}/{$feed.source_id}" title="{$feed.user_name}">分享{$feed.comment_count}</a>
+  	    {if $feed.place != null}
+					<p class="poi">在 <a href="/place/{$feed.place.id}">{$feed.place.pname}</a></p>
+		{/if}
+		
+
+{/template}
+

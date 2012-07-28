@@ -1,0 +1,25 @@
+{namespace xnTemplate.sdk}
+/**
+ * Says hello to a person.
+ * @param friend_list 好友列表
+ */
+{template .searchFirends}
+	<div class="searchBox">
+		<input type="text" placeholder="请输入信息" class="font-30"/>
+		<ul class="selectedFriends">
+			<li><i class="close">+</i></li>
+		</ul>
+	</div>
+	
+	<div class="share">
+	<span class="font-30">选择好友(3/{$friend_list.length})</span><input type="submit" value="分享" class="font-30" />
+	</div>
+	
+	<ul class="friendList"> 
+  	{foreach $friend in $friend_list}  	
+  	    <li ><img src="{$friend.head_url}"/><span>{$friend.user_name}</span></li>
+	{ifempty}
+  		0
+   {/foreach}
+   </ul>
+{/template}

@@ -1,0 +1,47 @@
+{namespace renren.pay}
+/**
+ * 充值历史详情页面
+ * @param data 
+ */
+{template .record}
+	<section class="on history_item">
+		<ul>
+			<li>
+				<label>订单编号</label>
+				<span>{$data.id}</span>
+			</li>
+			<li>
+				<label>充值金额</label>
+				<span>{$data.count}元</span>
+			</li>
+			<li>
+				<label>充值余额<span>(存入人人豆)</span></label>
+				<span>{$data.num}元</span>
+			</li>
+			<li>
+				<label>购买商品</label>
+				<span>{$data.productName}</span>
+			</li>
+			<li>
+				<label>应用名称</label>
+				<span>{$data.appName}</span>
+			</li>
+			<li>
+				<label>商户名称</label>
+				<span>{$data.oautherName}</span>
+			</li>
+			<li>
+				<label>日期时间</label>
+				<span>{$data.date}</span>
+			</li>
+			<li>
+				<label>充值方式</label>
+				<span>{$data.way}</span>
+			</li>
+			<li>
+				<label>充值状态</label>
+				<span>{$data.status}</span>
+			</li>
+		</ul>
+	</section>
+{/template}

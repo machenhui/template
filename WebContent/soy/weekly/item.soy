@@ -1,0 +1,11 @@
+{namespace renren.weekly}
+/**
+ * Says hello to a person.
+ * @param item 工作计划的详细内容
+ */
+{template .item}
+	<li class="item">
+		<div class="header"><h2 class="date">{$item.date}</h2><h2 class="title">{$item.title}</h2><i class="icon up"></i></div>
+		<div class="info">{$item.info}</div>
+	</li>
+{/template}

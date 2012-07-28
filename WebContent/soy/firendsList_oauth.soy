@@ -1,0 +1,12 @@
+{namespace examples.simple}
+/**
+ * Says hello to a person.
+ * @param friend_list 好友列表
+ */
+{template .firends_oauth} 
+  {foreach $friend in $friend_list}  	
+  	    <p><span><img src="{$friend.tinyurl}"/>{$friend.name}</span><img src="{$friend.headurl}"/></p>
+	{ifempty}
+  		0
+   {/foreach}
+{/template}

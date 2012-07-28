@@ -1,0 +1,31 @@
+{namespace renren.pay}
+/**
+ * 支付退出充值
+ * @param data 
+ */
+{template .quit}
+ <article class="font-1em quite">
+  <form action="{$data.formAction}" method="post">    
+    <header class="article"><p class="icon"></p><span>提示</span></header>
+    <section>    	
+    	<header>您还未完成充值，确定退出吗？</header>
+    	<ul>
+    		<li><input type="checkbox" name='exitReason' value="1"/><span>本来就不想充值</span></li>
+    		<li><input type="checkbox" name="exitReason" value="2"/><span>支付宝，银行卡等充值方式太少</span></li>
+    		<li><input type="checkbox" name="exitReason" value="4"/><span>页面反应速度太慢</span></li>
+    		<li><input type="checkbox" name="exitReason" value="3"/><span>设计复杂，不知道如何充值</span></li>
+    		<li class="textarea">
+    			<input type="checkbox" name="exitReason" value="5"/>
+    			<textarea rows="1" cols="30" placeholder="请写下你的建议" autocomplete="off" name="exitDesc"></textarea>
+    		</li>
+    	</ul>	
+    	<footer>
+    		<input type="hidden" value="5" name="exitLength" />
+    	    <a class="back_app" _c="{$data.hideFn}" hideURL="{$data.hideURL}">继续充值</a>
+    	    <input type="submit" value="确定退出" />
+    	</footer>
+    </section>
+    </form>
+    
+    </article>
+{/template}

@@ -1,0 +1,16 @@
+{namespace xn_template.google}
+/**
+ * Says hello to a person.
+ * @param result 新鲜事列表
+ */
+{template .search}
+<article>
+    {foreach $key in $result.items}
+     	<section>
+     		<header>{$key.title}</header>
+     		<div>{$key.snippet}</div>
+     	</section>
+    {/foreach}
+    
+</article>
+{/template}

@@ -1,0 +1,19 @@
+{namespace xn_template.google}
+/**
+ * Says hello to a person.
+ * @param userInfo 新鲜事列表
+ */
+{template .userInfo}
+ <ul>
+    {foreach $key in $userInfo}
+     	<li><label>{$key}</label><span>{$userInfo[$key]}</span></li>
+    {/foreach}
+    
+    <li><label>email</label><span>{$userInfo['email']}</span></li>
+    <li><label>family_name</label><span>{$userInfo['family_name']}</span></li>
+    <li><label>gender</label><span>{$userInfo['gender']}</span></li>
+    <li><label>id</label><span>{$userInfo['id']}</span></li>
+    <li><label>link</label><span>{$userInfo['link']}</span></li>
+    <li><label>name</label><span>{$userInfo['name']}</span></li>
+ </ul> 
+{/template}

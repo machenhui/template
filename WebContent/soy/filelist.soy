@@ -1,0 +1,15 @@
+{namespace examples.simple}
+/**
+ * Says hello to the world.
+ * @param filelist 文件列表
+ */
+{template .filelist}
+  <ul>
+  {foreach $file in $filelist}
+     <li><a _href="{$file.url}">{$file.name}</a></li>
+  {ifempty}
+  	 0
+  {/foreach}
+  
+  </ul>
+{/template}

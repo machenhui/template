@@ -1,0 +1,56 @@
+
+{namespace xnTemplate.feed}
+/**
+ * Feed: 状态 type:status  
+ * @param feed 新鲜事
+ */
+{template .status_update}
+ 
+ 		
+		<dd class="f_status" id="newsfeed-{$feed.id}">
+			{call xnTemplate.feed.user_avatar data="$feed.user"}
+				{param user_id:$feed.user_id /}
+				{param user_name:$feed.user_name /}
+				{param head_url:$feed.head_url /}
+			{/call}
+			<div>
+			
+				<a href="/profile/{$feed.user_id}">{$feed.user_name}</a>
+				 <br />
+				{$feed.title}
+				
+				<!-- 转发状态的原文 -->
+				{if $feed.status_forward != null}
+					<p class="c">
+						<a href="/profile/{$feed.status_forward.owner_id}">
+							{$feed.status_forward.owner_name}
+						</a><br />
+						{$feed.status_forward.status}
+					</p>
+				{/if}
+				
+				<span call=xnTemplate.feedItemTime data={$feed.user}></span>
+				
+				<p class="op">
+					<a href="/status/{$feed.user_id}/{$feed.source_id}"  _c="O.e()">
+						回复<span class="count">
+						{if $feed.comment_count>0 }{$feed.comment_count}{/if}</span>
+					</a>
+					<a class="f" href="/status/{$feed.user_id}/{$feed.source_id}" _c="O.f({if $feed.status_forward != null }1{/if})" 
+					{if $feed.status_forward==null }
+					{{msg desc="Example: The set of prime numbers is {2, 3, 5, 7, 11, 13, ...}."}}{{/msg}}
+					_data="'user_name':'{$feed.user_name}'"
+					{/if}
+					>分享</a>
+					
+					{if $feed.user_id != null}
+						<a href="/status/{$feed.user_id}/{$feed.source_id}?_method=delete" _c="O.o()">删除</a>
+					{/if}
+					
+				</p>
+			</div>
+			
+		</dd>	
+
+{/template}
+

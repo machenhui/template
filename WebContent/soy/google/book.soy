@@ -1,0 +1,23 @@
+{namespace xn_template.google}
+/**
+ * Says hello to a person.
+ * @param books 新鲜事列表
+ */
+{template .books}
+ <ul>
+ {foreach $book in $books.items}
+ 		<li>
+ 		  <a href="{$book.selfLink}">
+ 		  {if $book.searchInfo != null}
+ 		  		{$book.searchInfo.textSnippet}
+ 		  {else}
+ 		  		null
+ 		  {/if}
+ 		  </a>
+ 		  
+ 		  {ifempty}
+  			  0
+  	   </li>	
+   {/foreach}
+ </ul> 
+{/template}

@@ -1,0 +1,23 @@
+{namespace examples.simple}
+/**
+ * Says hello to the world.
+ * @param profile 个人主页内容
+ */
+{template .userMessage}
+			<form class="profile">
+				{$profile.user_id |noAutoescape}
+				<span>
+					Hello 
+					<a class="userName">{$profile.user_name}</a>!
+					<img class="headUrl" src="{$profile.main_url}" style="width:50px;height:50px;"/>
+				</span>
+  				<p>vip等级：{$profile.vip_level}</p>
+				<input type="hidden" value="{$profile.user_id}" />
+				<label>用户所属网络</label>:{$profile.network}
+				{if $profile.has_right}
+					<p> 有访问权限</p>
+				{else}
+					<p>{$profile.has_right}没有访问权限</p>
+				{/if}
+			</form>
+{/template}
