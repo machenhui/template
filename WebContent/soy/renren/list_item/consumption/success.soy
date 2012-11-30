@@ -1,0 +1,39 @@
+{namespace renren.pay.historyList.consumptionItem}
+/**
+ * 列表item
+ * @param item 
+ × {"uid":"738476915","createAt":"2012-08-14 11:37:37","expendTraceName":"3G SDK 测试","expendName":"3g微客户端平台","kxd":"20","no":"17","expendTrace":"100001","billId":"1344915457371976586","expendCode":"SDK"}
+ */
+{template .success}
+	<li class="pay_success" billId="{$item['billId']}">   
+     				<div class="left">
+     					<p>
+    						<!-- 订单编号 -->
+    						<span>{$item['createAtShort']}</span>
+    						<!-- 支付方式  -->
+    						<span></span>
+    						<!-- 充值状态 -->
+    						<span>消费成功</span>
+    					</p>
+    					<p>
+    						<!-- 接收方账户类型 -->
+    						<span>
+    						{if $item['expendTraceName']!=null}
+								{$item['expendTraceName']}
+							{/if}
+    						</span>
+    						<!-- 充值金额 消费: -->
+    						<span></span>
+    						<span>￥{$item['kxd']}</span>
+    					</p>
+    					<p class="balance noDis">
+    						<!-- 消费余额 -->
+    						<span>消费余额(存进人人豆)</span>
+    						<!-- 充值金额 -->
+    						<span>100</span>
+    					</p>     				
+     				</div>  				
+    				
+    				<p class="slide-right"></p>     				    				
+    			</li>
+{/template}

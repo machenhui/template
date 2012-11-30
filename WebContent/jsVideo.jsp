@@ -1,4 +1,4 @@
-<%@page import="test.HelloWorld"%>
+<%@page import="com.xn.compiler.TemplateTrans"%>
 <%@page import="com.google.template.soy.SoyFileSet"%>
 <%@page import="com.google.template.soy.jssrc.SoyJsSrcOptions"%>
 <%@page import="com.google.template.soy.tofu.SoyTofu"%>

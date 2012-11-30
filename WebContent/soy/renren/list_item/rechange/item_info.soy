@@ -1,0 +1,44 @@
+{namespace renren.pay.rechargeInfo}
+/**
+ * 充值历史详情页面
+ * @param data 
+ */
+{template .record}
+    <div class="header " _c="O.cpch('{$data['backURL']}');"><p class="slide-left"></p><span class="font-1_2em">充值详单</span></div>
+
+	<section class="on history_item">
+		<ul>
+			<li>
+				<label>订单编号</label>
+				<span>{$data['billId']}</span>
+			</li>
+			<li>
+				<label>充值金额</label>
+				<span>{$data['kxd']}元</span>
+			</li>
+			
+			<li>
+				<label>日期时间</label>
+				<span>{$data['createAt']}</span>
+			</li>
+			<li>
+				<label>充值方式</label>
+				<span>{$data['payTypeName']}</span>
+			</li>
+			<li>
+				<label>充值状态</label>
+				{switch round($data['status'])}
+					{case 0}		 			
+		 				<span>充值失败</span>
+		 			{case 1}
+		 				<span>充值成功</span>
+		 			{case 2}
+		 		     	<span>充值中</span>
+		 			{default}
+		 				<span>充值成功</span>
+				{/switch}
+				
+			</li>
+		</ul>
+	</section>
+{/template}

@@ -1,0 +1,24 @@
+{namespace xn.demo}
+/**
+ * 测试页面
+ * @param logo 图片地址
+ */
+{template .main}
+	{call xn.demo.header}
+		{param logo:$logo /}
+	{/call}
+	<div class="image-scroll">
+		<div class="image-contianer">
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+			<img src="" alt=""/>
+		</div>
+		<div class="control-buttons">
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+		</div>
+	</div>
+	{call xn.demo.product}
+	{/call}
+{/template}

@@ -1,0 +1,59 @@
+{namespace xn.oauth}
+/**
+ * Oauth授权列表页面  required="required"
+ * @param userMessage 
+ * @param swipUserURL
+ * @param hidden 
+ * @param cancelURL 退出返回地址
+ * @param captchaUrl 验证码
+ * @param userName
+ * @param auths 权限数组
+ */
+{template .oauthForm}
+<section id="authForm" class="oauthForm">    
+	
+   {if $userMessage['isLogin']}
+     <div id="buttons" class="buttons">  
+		<p class="swip_user">以<a href="{$swipUserURL}">{$userName}</a>帐号登录</p> 
+    	<a class="cancel button">取消</a>
+    	<input type="submit" value="授权"/>
+   </div>
+ 
+   {else}
+   		
+   	  {if $userMessage['errorMessage'] != null}
+   		<p class="font-24 error-tip">{$userMessage['errorMessage']}</p>
+      {/if}
+   <fieldset id="loginAuth" class="loginAuth">
+   	   
+   	   <p class="user_name">
+   	   	<i class="img"></i>
+   	    <input type="text" class="user_name" placeholder="请输入用户名" name="email" value="{$userMessage['email']}" autocomplete="off"  />
+   	    <a class="close" _c="O.co3ci();"></a>
+   	   </p>
+   	   <p class="password">
+   	      <i class="img"></i>
+   	      <input type="password" name="password" placeholder="请输入密码"  autocomplete="off" />
+   	      <a class="close" _c="O.co3ci();"></a>
+   	   </p>
+          	          
+   </fieldset>
+   	{if $captchaUrl}
+     <p class="checkcode">
+      	<input type="text"  name="captcha" class="checkcode"  placeholder="请填写验证码" autocomplete="off" required="required"/>
+        <a _c="O.cori()" data-image-url="{$captchaUrl}" style="background-image:url({$captchaUrl});"></a>
+	 </p>	
+   	 {/if}
+  	  <div id="buttons" class="buttons">
+		<a href="http://mreg.renren.com/reg/wljump.do?r=1&from=8000401" class="regest_link">立即注册人人帐号</a> 		  
+    	<a class="cancel button" {if $cancelURL}href="{$cancelURL}"{/if} >取消</a>
+    	<input type="submit" value="授权"/>
+   	  </div>
+   {/if}
+   
+   {call xn.oauth.hidden}
+   		{param hidden:$hidden/}
+   		{param auths:$auths /}
+   {/call}
+</section>
+{/template}

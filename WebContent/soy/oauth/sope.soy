@@ -1,0 +1,96 @@
+{namespace xn.oauth}
+/**
+ * Oauth授权列表页面
+ * @param scope 
+ * @param showBecomePageFan 是否成为公共主页粉丝
+ * @param appInfo  应用相关信息
+ * @param headFullUrl 用户头像
+ */
+{template .scope}
+			<section id="sope" class="sope" >
+				<header>点击授权，将允许<span>{$appInfo['name']}</span>以下操作：</header>
+					<ul class="table">
+					{if $scope}
+					
+					{foreach $item in $scope}						
+							{if $item==0}						 
+						<li>
+		  					<i class="icon permission_0" {if $headFullUrl}style="background-image:url({$headFullUrl});"{/if}></i>
+		  					<div class="content_desc">
+		  						<h4>获取我的个人信息和好友关系</h4>
+		  						<p>包括性别、姓名、头像、好友列表以及其他设置为所有人可见的基本信息。</p>
+		  					</div>
+						</li>
+							{/if}
+							{ifempty}
+					 {/foreach}	
+					 
+					 {foreach $item in $scope}					  
+							{if ($item == 6) or ($item==7)}							
+						<li>
+		 					 <i class="icon permission_7"></i>
+		  					 <div class="content_desc">
+		  						<h4>获取及发布消息到人人网</h4>
+		  						<p>读取相册，新鲜事，日志，状态，视频，留言以及发布相关信息。</p>
+		  					 </div>
+		
+						</li>
+							{/if}
+							{ifempty}
+					   {/foreach}
+					   {foreach $item in $scope}		
+							{if $item == 17}
+						<li>
+		  					<i class="icon permission_17"></i>
+		  					<div class="content_desc">
+		  						<h4>分享游戏积分到人人网</h4>
+		  						<p>在新鲜事中发布我的游戏信息 。</p>
+		  					</div>
+		  
+						</li>
+							{/if}
+							{ifempty}
+						 {/foreach}
+						 
+						 {foreach $item in $scope}
+							{if $item == 22}
+						<li>
+		  					<i class="icon permission_22"></i>
+		  					<div class="content_desc">
+		  						<h4>获取我地理位置的相关信息</h4>
+		  						<p>包括查看周围好友，以及接收基于地理位置的推送信息。 </p>
+		  					</div>
+		 
+						</li>
+							{/if}
+							{ifempty}
+						 {/foreach}
+						 {foreach $item in $scope}
+							{if ($item == 31) or ($item == 36)}
+						<li>
+		  					<i class="icon permission_31"></i>
+		  					<div class="content_desc">
+		  						<h4>管理我的公共主页及站内信息</h4>
+		  						<p>包括消息，站内消息和留言。</p>
+		  					</div>
+						</li>
+							{/if}
+							{ifempty}
+						{/foreach}
+						
+							{if $showBecomePageFan}
+						<li class="permission_checkbox">
+		  					<input type="checkbox" checked="checked"/>
+		  					<i class="icon permission_37"></i>
+		  					<div class="content_desc">
+		  						<h4>成为公共主页关注者</h4>
+		  						<p>接收最新动态。</p>
+		  					</div>
+		  
+						</li>
+							{/if}
+							
+					{/if}
+				</ul>
+			</section>
+{/template}

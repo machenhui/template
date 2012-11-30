@@ -1,0 +1,9 @@
+@def BG_COLOR rgb(255,255,255);
+
+body{
+	background-color:BG_COLOR;
+	color:rgba(333,333,333,0.5);
+}
+.body-title{
+	-webkit-box-sizing:border-box;
+}

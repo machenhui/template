@@ -1,0 +1,40 @@
+{namespace renren.pay.historyList }
+/**
+ * 消费详情列表
+ * @param data 信息列表
+ */
+{template .consumption}
+				
+		 {foreach $item in $data}
+		 	
+		 	
+		 			{call renren.pay.historyList.consumptionItem.success }
+		 				{param item:$item /}
+		 			{/call}
+		 	
+		 		
+		 		
+		 	
+		 	{ifempty}
+		 	
+		 {/foreach}
+	
+{/template}
+
+/**
+ * 充值详单
+ * @param data 
+ */
+{template .recharge}
+				
+		 {foreach $item in $data}
+		 	
+		 	
+		 	{call renren.pay.historyList.rechargeItem.item }
+		 				{param item:$item /}
+		 			{/call}
+		 	{ifempty}
+		 	
+		 {/foreach}
+	
+{/template}

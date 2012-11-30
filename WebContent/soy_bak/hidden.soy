@@ -1,0 +1,21 @@
+{namespace xn.oauth}
+
+/**
+ * hidden 字段  竟然不能遍历Map 急需扩充功能
+ * @param hidden  传递过来的数据
+ * @param auths 权限数组
+ */
+{template .hidden}
+	
+	{foreach $key in keys($hidden)}
+		{if $hidden[$key]}
+			<input type="hidden" name="{$key}" value="{$hidden[$key]}" />
+		{/if}
+		{ifempty}
+	{/foreach}
+	
+	
+	{if $auths}
+	     <input type="hidden" name="auths" value="[{$auths}]" />
+	{/if}
+{/template}

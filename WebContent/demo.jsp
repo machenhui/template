@@ -8,6 +8,19 @@
 <%@include file="index.jsp" %>
 </head>
 <body>
-测试页面
+<script type="text/javascript">
+	console.profile("xnTest");
+	var startTime = window.performance.webkitNow();
+</script>
+<% int b = 0;for(b =0;b<10000;b++){ %>
+  <img src="http://fmn.rrimg.com/fmn065/20120814/1145/original_3Z6x_779400008e7d1260.jpg" />
+  <img src="http://fmn.rrfmn.com/fmn058/20120815/1055/large_HDLW_26bd00002adf1260.jpg" />
+<%} %>
+<script type="text/javascript">
+var endTime = window.performance.webkitNow();
+console.profileEnd("xnTest");
+console.log(console.profiles[0].head.totalTime);
+console.log(endTime-startTime);
+</script>
 </body>
 </html>

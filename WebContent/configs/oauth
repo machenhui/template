@@ -1,0 +1,4 @@
+oauth/main.soy
+oauth/oauthForm.soy
+oauth/sope.soy
+oauth/hidden.soy

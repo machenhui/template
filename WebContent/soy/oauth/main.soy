@@ -1,0 +1,37 @@
+{namespace xn.oauth }
+/**
+ * Oauth授权主页面
+ * @param data 个人主页内容
+ */
+{template .main }
+			<article id="oauth" class="oauth">
+			  <form action="{$data['forActionURL']}">
+			  {if $data['showHeader']}
+			  <header class="page_title">
+					<i class="img logo"></i>
+					<span>与人人链接</span>
+			  </header>
+			  {/if}
+			  <div class="content">
+			    <!--授权信息列表 -->
+			    {call xn.oauth.scope }
+  					{param scope:$data['show_auths'] /}
+  					{param showBecomePageFan:$data['showBecomePageFan'] /}
+  					{param appInfo:$data['appInfo'] /}
+  					{param headFullUrl:$data['user']['headFullUrl']/}
+				{/call}
+				<!-- oauth 信息列表 -->
+				{call xn.oauth.oauthForm }
+  					{param userMessage:$data['user']  /}
+  					{param swipUserURL:$data['swipUserURL']  /}
+  					{param hidden:$data['hidden']/}
+  					{param auths:$data['auths'] /}
+  					{param captchaUrl:$data['captchaUrl']/}
+  					{param cancelURL:$data['cancelURL']/}
+  					{param userName:$data['user']['name'] /}
+				{/call}
+			  </div>
+			  <footer></footer>
+			  </form>
+			</article>
+{/template}

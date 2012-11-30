@@ -1,0 +1,35 @@
+{if $hidden['client_id']}
+		<input type="hidden" name="client_id" value="{$hidden['client_id']}" />
+	{/if}
+	
+	{if $hidden['scope']}
+		<input type="hidden" name="scope" value="{$hidden['scope']}" />
+	{/if}
+	
+	{if $hidden['response_type']}
+		<input type="hidden" name="response_type" value="{$hidden['response_type']}" />
+	{/if}
+	
+	{if $hidden['redirect_uri']}
+		<input type="hidden" name="redirect_uri" value="{$hidden['redirect_uri']}" />
+	{/if}
+	
+	{if $hidden['from']}
+		<input type="hidden" name="from" value="{$hidden['from']}" />
+	{/if}
+	
+	{if $hidden['model']}
+		<input type="hidden" name="model" value="{$hidden['model']}" />
+	{/if}
+	
+	{if $hidden['client_info']}
+		<input type="hidden" name="client_info" value="{$hidden['client_info']}" />
+	{/if}
+	
+	{if $hidden['login_type']}
+		<input type="hidden" name="login_type" value="{$hidden['login_type']}" />
+	{/if}
+	
+	{if $hidden['display']}
+		<input type="hidden" name="display" value="{$hidden['display']}" />
+	{/if}

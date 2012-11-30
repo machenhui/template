@@ -1,0 +1,14 @@
+{namespace album.css}
+/**
+ * Says hello to the world.
+ * @param positionList 个人主页内容
+ */
+{template .normal}
+		{foreach $operand in $positionList}
+  			.album img.{$operand.id}{lb}
+  				-webkit-transform:translateX({$operand.x}) translateY({$operand.y});
+  			{rb}
+			{ifempty}
+ 			 0
+		{/foreach}	
+{/template}

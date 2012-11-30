@@ -1,0 +1,39 @@
+{namespace renren.pay.historyList.rechargeItem}
+/**
+ * 列表item
+ * @param item 
+ */
+{template .success}
+	
+		{switch round($item['status'])}
+		 		{case 0}		 			
+		 			<li class="failure" billId="{$item['billId']}">
+		 		{case 1}
+		 			<li class="pay_success" billId="{$item['billId']}">
+		 		{case 2}
+		 		     <li class="paying" billId="{$item['billId']}">
+		 		{default}
+		 			<li class="pay_success" billId="{$item['billId']}">
+		 	{/switch}
+    	
+     				<div class="left">
+     					<p>
+    						<!-- 订单编号 -->
+    						<span>{$item['createAtShort']}</span>
+    						<!-- 支付方式 -->
+    						<span>{$item['payTypeName']}</span>
+    						<!-- 充值状态 -->
+    						<span>充值成功</span>
+    					</p>
+    					<p>
+    						<!-- 接收方账户类型 -->
+    						<span>人人豆</span>
+    						<!-- 充值金额 -->
+    						<span>充值：</span>
+    						<span>￥{$item['kxd']}</span>
+    					</p>     				
+     				</div>     				
+    				
+    				<p class="slide-right"></p>    				    				
+    			</li>
+{/template}

@@ -1,0 +1,29 @@
+{namespace renren.pay.historyList.rechargeItem}
+/**
+ * 列表item
+ * @param item 
+ */
+{template .paying}
+	
+    		<li class="paying" billId="{$item.billId}"> 
+     				<div class="left">
+     					<p>
+    						<!-- 订单编号 -->
+    						<span>{$item.createAt}</span>
+    						<!-- 支付方式 -->
+    						<span>{$item.payTypeName}</span>
+    						<!-- 充值状态 -->
+    						<span>充值中...</span>
+    					</p>
+    					<p>
+    						<!-- 接收方账户类型 -->
+    						<span>人人豆</span>
+    						<!-- 充值金额 -->
+    						<span>充值：</span>
+    						<span>￥{$item.kxd}</span>
+    					</p>     				
+     				</div>     				
+    				
+    				<p class="slide-right"></p>    				    				
+    			</li>
+{/template}
