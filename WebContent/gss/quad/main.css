@@ -1,0 +1,78 @@
+/**
+  * quad 全局默认样式
+  */
+
+
+a{
+	color: ACTIVE_COLOR ;
+}
+
+body{
+	background:url(/image/bg2x.png) repeat;
+}
+
+/*头部的搜索，退出，logo等*/
+.noDis{
+	display:none!important;
+}
+.main{
+	max-width:1024px;
+	margin:.2em auto;
+}
+.logo{
+	display:inline-block;	
+	background:no-repeat;
+	background-image:url(http://s.xnimg.cn/imgpro/v6/logo.png?f=home);
+	width:160px;
+	height:30px;
+}
+
+.main>header{
+	position:fixed;
+	width:100%;
+	top:0px;
+	left:0px;
+	background:rgba(0,0,0,0.8);
+	z-index:2;
+	padding:.2em 0px;
+	
+}
+.main>header .logo,
+.main>header form,
+.main>header a{
+	vertical-align:middle;
+	color:#fff;
+}
+.main>header.scroll a.btn{
+	background-color:initial;
+	outline:none;
+}
+.main>header a.btn:hover{
+	background-color: ACTIVE_COLOR ;
+	padding:.5em 0px;
+	outline:.5em solid ACTIVE_COLOR;
+}
+
+.main>header a.btn:active{
+	background-color: BTN_ACTIVE_COLOR ;
+	outline:.5em solid BTN_ACTIVE_COLOR ;
+}
+
+
+.main>header + *{
+	margin-top:4em;
+}
+.main header form{
+	display:inline-block;
+	float:right;
+}
+.main header a{
+		margin:0px 1em;
+		text-decoration:none;
+	}
+/*and (max-device-width:1440px) 之后再调整，让它在大屏幕上可以显示更清晰*/
+@media screen and (min-device-width:1280px){
+	.main{
+		 max-width:1194px; 
+	}	
+}

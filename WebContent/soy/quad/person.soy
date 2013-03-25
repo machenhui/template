@@ -1,0 +1,39 @@
+{namespace quad}
+/**
+ * 查看单个人发的feed
+ * @param user 用户信息
+ * @param userPublish 用户发布的feed
+ * @param userJoin 用户参与的feed
+ */
+{template .profile}
+   //用户个人信息
+   <section class="profile">
+      <img src="{$user['icon']}"  alt="{$user['name']}"/>
+      <div class="user-message">
+      	 <p>{$user['name']}</p>
+      	 <div class="column">
+      	 	<p><span>UID:</span>{$user['UID']}</p>
+      	 	<p><span>Gender:</span>{$user['gender']}</p>
+      	 	<p><span>Birthday:</span>{$user['birthday']}</p>
+      	 	<p><span>School:</span>{$user['school']}</p>
+      	 	<p><span>District:</span>{$user['city']}</p>
+      	 	
+      	 	<p><span>Registion time:</span>2012-12-11 12:37</p>
+      	 	<p><span>Last active time:</span>2013-2-7 1:37</p>
+      	 	
+      	 	<p><span>Friends on Fackbook:</span>{$user['facebook_num']}</p>
+      	 	<p><span>Friends on quad:</span>34</p>
+      	 	<p><span>Chats:</span>34</p>
+      	 	<p><span>Guesses:</span>34</p>
+      	 	<p><span>Guessesed:</span>34</p>      	 
+      	 </div>
+      </div>
+   </section>
+   
+   //feed 的卡片布局
+	{call .cardView}
+		{param feedList:$userPublish /}
+		{param userJoin:$userJoin /}
+	{/call} 
+  
+{/template}

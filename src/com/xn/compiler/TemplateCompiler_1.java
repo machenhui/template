@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import sun.misc.BASE64Encoder;
+
 
 
 
@@ -102,11 +102,11 @@ public class TemplateCompiler_1 extends CompilerBase implements CompilerInterfac
 		//确定计算方法 
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		
-		BASE64Encoder base64en = new BASE64Encoder(); 
+		//BASE64Encoder base64en = new BASE64Encoder(); 
 		//加密后的字符串 
-		String newstr=base64en.encode(md5.digest(content.getBytes("utf-8"))); 
+		//String newstr=base64en.encode(md5.digest(content.getBytes("utf-8"))); 
 		
-		newstr = "b"+new Date().getTime();
+		String newstr = "b"+new Date().getTime();
 		System.out.println(newstr);
 	    return newstr;
 		
@@ -139,7 +139,7 @@ public class TemplateCompiler_1 extends CompilerBase implements CompilerInterfac
 			}else{
 				resultStr = "压缩异常";
 			}
-		} catch (IOException | InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			resultStr = "压缩异常";

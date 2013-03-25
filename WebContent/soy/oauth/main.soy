@@ -5,7 +5,7 @@
  */
 {template .main }
 			<article id="oauth" class="oauth">
-			  <form action="{$data['forActionURL']}">
+			  <form action="{$data['forActionURL']}" method="post" enctype="application/x-www-form-urlencoded">
 			  {if $data['showHeader']}
 			  <header class="page_title">
 					<i class="img logo"></i>

@@ -19,7 +19,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.eclipse.jetty.util.resource.Resource;
+
 
 public class TemplateTrans {
   public  TemplateTrans(){

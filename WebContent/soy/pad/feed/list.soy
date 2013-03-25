@@ -1,0 +1,42 @@
+{namespace pad}
+/**
+ * 新鲜事列表
+ * @param feed_list
+ * 
+ */
+{template .feedList}
+   <ul>
+	{foreach $feed in $feed_list}
+		{switch $feed['type']}
+				{case 102}
+					{call .f102 }
+						{param data:$feed /}
+					{/call}
+				{case 103}
+					{call .f103 }
+						{param data:$feed /}
+					{/call}
+				{case 104}
+					{call .f104 }
+						{param data:$feed /}
+					{/call}
+				{case 3801}
+					{call .f3801 data="$feed"}
+						{param data:$feed /}
+					{/call}
+				{case 3802}
+					{call .f3802 data="$feed"}
+					{/call}
+				{case 3803}
+					{call .f3803 data="$feed"}
+					{/call}
+				{case 3804}
+					{call .f3804 data="$feed"}
+					{/call}
+				{default}
+		{/switch}
+	{ifempty}
+			""
+	{/foreach}
+	</ul>
+{/template}

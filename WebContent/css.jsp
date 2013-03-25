@@ -11,6 +11,15 @@ response.setHeader("content-type", "text/css");
 String configFileName = request.getParameter("config");
 CSSCompiler_1 jsc = new CSSCompiler_1(rootPath);
 LinkedHashMap<String,String> params = new LinkedHashMap<String,String>();
+/* params.put("output-renaming-map-format", "CLOSURE_UNCOMPILED"); */
+params.put("rename", "NONE");
+String userAgent = request.getHeader("User-Agent");
+if(userAgent.indexOf("Firefox") != -1){
+	params.put("vendor", "MOZILLA");
+}
+if(userAgent.indexOf("AppleWebKit") != -1){
+	params.put("vendor", "WEBKIT");
+}
 LinkedList<String> cssFiles = new LinkedList<String>();
 String basePath = rootPath+File.separator+"gss"+File.separator;
 
@@ -27,7 +36,7 @@ if(configFileName != null){
 			   }
 			   fileName = fileName.split(" ")[0];
 			   System.out.println("========css files start=========");
-			   if(fileName.trim() !=null &&fileName.trim().endsWith("gss")){
+			   if(fileName.trim() !=null &&(fileName.trim().endsWith("gss")||fileName.trim().endsWith("css"))){
 				   System.out.println(fileName.trim());
 				   
 				   cssFiles.push(basePath+fileName.trim());

@@ -1,0 +1,13 @@
+@defmixin flexBox() {
+	display:-webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align:center;
+ 
+}
+
+@defmixin boxFlex(VALUE){
+	-webkit-box-flex:VALUE;
+	box-flex:VALUE;
+	-ms-box-flex:VALUE;
+}
+

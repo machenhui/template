@@ -1,0 +1,23 @@
+.content-list {
+	border:1px solid #666;
+	
+}
+
+.icon{
+	display:inline-block;
+}
+
+.icon.head{
+	width:44px;
+	height:44px;
+}
+
+form#login{
+	display:none;
+}
+
+video{
+	border:2px solid #000;
+	width:100%;
+	height:300px;
+}
