@@ -1,0 +1,18 @@
+{namespace quadManager}
+/**
+ * @param loginURL 登陆的地址
+ */
+{template .login}
+<section class="login-win">
+  <form action="{$loginURL}" method="POST">
+   <p>已经修改为使用Quad账户登录，使用手机号，和Quad的密码</p>
+   <fieldset>
+   		<input type="text" placeholder="请输入手机号" required name="mobile" autocomplete="on" autofocus/>
+   		<input type="password" placeholder="请输入密码" required name="password" autocomplete="on"/>
+   </fieldset>
+   <fieldset>
+   		<input type="submit" value="登陆" />
+   </fieldset>
+  </form>
+</section>
+{/template}

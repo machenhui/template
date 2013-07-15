@@ -1,0 +1,17 @@
+{namespace jingwei}
+/**
+ * @param images
+ */
+{template .Slide}
+<div class="swipe">
+	<ul class="slide-container" style="width:{length($images)}00%;">
+		{foreach $item in $images}
+			<li class="slide-item" index="{index($item)}">
+				<img src="{$item}" />
+			</li>
+			{ifempty}
+			
+		{/foreach}
+	</ul>
+</div>
+{/template}

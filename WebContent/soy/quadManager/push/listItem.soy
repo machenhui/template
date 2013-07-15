@@ -1,0 +1,12 @@
+{namespace quadManager.push}
+/**
+ * @param item 显示的元素
+ */
+{template .listItem}
+<tr id="{$item['id']}">
+      <td>{$item['id']}</td>
+      <td>{$item['pluginType']}</td>
+      <td>{$item['pluginDesc']}</td>
+      <td><a href="javascript:quadJS.PushMessage.showUpdateForm({$item['id']});">更新</a>&nbsp;<a href="javascript:void(0);" onclick="javascript:quadJS.PushMessage.deletePushMessage({$item['id']},this);">删除</a></td>
+    </tr>
+{/template}

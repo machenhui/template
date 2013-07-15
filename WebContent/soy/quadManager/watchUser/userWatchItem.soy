@@ -1,0 +1,21 @@
+{namespace quadManager.watchUser}
+/**
+ * @param item 监控数据
+ */
+{template .userWatchItem}
+{if $item['isNull'] == false}
+<tr>
+<td>
+{if $item['date'] != null}
+	{$item['date']}
+{elseif $item['dateString'] != null}
+	{$item['dateString']}
+{/if}
+</td>
+//<td>{$item['method']}</td>
+<td class="request-url">{$item['request']}</td>
+<td class="response-data">{$item['response']}</td>
+//<td>{$item['code']}</td>
+</tr>
+{/if}
+{/template}

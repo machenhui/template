@@ -1,0 +1,47 @@
+{namespace quadManager.mgr}
+/**
+ * @param data mgr 数据
+ */
+{template .form}
+<form action="{if $data != null}/quadmanager/mgr/update.do{else}/quadmanager/mgr/add.do{/if}" method="post" class="mgr-form" enctype="application/x-www-form-urlencoded">
+{if $data != null}
+<input type="hidden"  name="id" value="{$data['id']}" />
+{/if}
+<p>*注释：batId和endWidth之间层级关系，首先验证endWith,再剩下的用户里面，再匹配batId里面的用户，如果batId里面的用户Id与endWith冲突，则不能收到更新</p>
+<p class="bat-user">
+	<label>batId</label>:
+	<input type="text" list="batSelectUser" placeholder="搜索用户" name="batId" value="{if $data != null}{$data['batId']}{/if}"/>	
+</p>
+<p><label>endWith</label>: <input type="text" name="endWith" value="{if $data != null}{$data['endWith'] == null?'':$data['endWith']}{/if}" /></p>
+<p><label>*lastestVersion:</label>: <input type="text" name="lastestVersion" value="{if $data != null}{$data['lastestVersion']}{/if}" placeholder="请填入跟心的版本号" required/></p>
+
+// <p><label>channelId</label>: <input type="text" disabled name="channelId" value="{if $data != null}{$data['channelId']}{/if}" /></p>
+<p><label>*clientVersion</label>: <input type="text"  name="clientVersion" value="{if $data != null}{$data['clientVersion']}{/if}" required  placeholder="请填写客户端版本" /></p>
+<p><label>*appId</label>: <input type="number"  name="appId" value="{if $data != null}{$data['appId']}{/if}" required placeholder="请填写appId" /></p>
+//<p><label>clientName</label>: <input type="text" disabled name="clientName" value="{if $data != null}{$data['clientName']}{/if}" /></p>
+ 
+<p>
+<label>升级方式</label>: 
+<select name="resultType">
+	<option value="0" {if $data != null}{if $data['resultType'] == 0}selected{/if}{/if}>无更新</option>
+	<option value="1" {if $data != null}{if $data['resultType'] == 1}selected{/if}{/if}>可选更新</option>
+	<option value="2" {if $data != null}{if $data['resultType'] == 2}selected{/if}{/if}>强制更新</option>
+</select>
+</p>
+<p><label>*leftText(升级按钮)</label>: <input type="text" name="leftText" required placeholder="请填写左侧侧按钮文案" value="{if $data != null}{$data['leftText']}{/if}" /></p>
+<p><label>*midText</label>: <input type="text" name="midText" required placeholder="请填写中间侧按钮文案" value="{if $data != null}{$data['midText']}{/if}" /></p>
+<p><label>*rightText</label>: <input type="text" name="rightText"required placeholder="请填写右侧按钮文案" value="{if $data != null}{$data['rightText']}{/if}" /></p>
+<p><label>*mainText</label>: <textarea name="mainText" required placeholder="请填写提示文案" maxlength="500">{if $data != null}{$data['mainText']}{/if}</textarea></p>
+<p><label>*titleText</label>: <input type="text" name="titleText" value="{if $data != null}{$data['titleText']}{/if}" required placeholder="请填写顶部title"/></p>
+/*
+ <p><label>ua</label>: <input type="text" disabled name="ua" value="{if $data != null}{$data['ua']}{/if}" /></p>
+<p><label>os</label>: <input type="text" disabled name="os" value="{if $data != null}{$data['os']}{/if}" /></p>
+ */
+
+<p><label>*APP下载地址</label>: <input type="text" name="url" value="{if $data != null}{$data['url']}{/if}" required placeholder="请填写app下载地址"/></p>
+<p></p>
+<p><label>更新缓存时间</label>: <input type="number" name="periodRemind" min=0 value="{if $data != null}{if $data['periodRemind'] != null}{$data['periodRemind']}{else}24{/if}{else}24{/if}" required placeholder="请填写缓存时间"/></p>
+<p class="submit"><input type="submit" value="保存" /></p>
+</form>
+
+{/template}

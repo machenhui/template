@@ -1,0 +1,14 @@
+{namespace quadManager.mgr}
+/**
+ * @param userList 用户列表
+ */
+{template .batUserList}
+   {if $userList != null}
+　　<datalist id="usersList">
+	{foreach $user in $userList}
+	 	<option value="{$user['userName']}" user-id="{$user['userId']}"></option>
+		{ifempty}
+	{/foreach}
+   </datalist>
+   {/if}
+{/template}

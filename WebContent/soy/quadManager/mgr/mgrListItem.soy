@@ -1,0 +1,25 @@
+{namespace quadManager.mgr}
+/**
+ * @param item
+ */
+{template .mgrListItem}
+  <tr id="{$item['id']}">
+      <td>{$item['appId']}</td>
+      <td>{$item['batId']}</td>
+      <td>{$item['clientVersion']}</td>
+      <td>{$item['lastestVersion']}</td>
+      <td>
+      	{switch $item['resultType']}
+      		{case 0}
+      			普通升级(0)
+      		{case 1}
+      			可选升级(1)
+      		{case 2}
+      			强制升级(2)
+      		{default}
+      			未知升级方式({$item['resultType']})
+      	{/switch}
+      </td>
+      <td><a href="javascript:Mgr.showUpdateForm({$item['id']});">更新</a>&nbsp;&nbsp;<a href="javascript:void(0);" onclick="Mgr.delMgr({$item['id']},this);">删除</a></td>
+    </tr>
+{/template}

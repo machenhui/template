@@ -1,0 +1,23 @@
+{namespace quadManager}
+/**
+ * 主界面
+ */
+{template .main}
+
+<article class="main">
+<!--页面头部导航-->
+<header class="page-header">
+<h1><i class="icon logo"></i>Quad后台管理系统</h1>
+<a href="/quadmanager/user/logout.do" class="logout">退出登陆</a>
+</header>
+<div class="content">
+<div class="left-menu">
+	{call .leftMenu /}
+</div>
+<div class="right" id="iframe-main">
+   服务器太慢了，请稍等。。。。
+</div>
+</div>
+</article>
+
+{/template}

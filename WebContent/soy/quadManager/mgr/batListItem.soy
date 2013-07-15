@@ -1,0 +1,10 @@
+{namespace quadManager.mgr}
+/**
+ * @param item 单个元素
+ */
+{template .batListItem}
+<tr id="{$item['batId']}">
+      <td>{$item['batId']}</td>
+      <td><a href="javascript:quadJS.BatUser.showUpdateForm({$item['batId']});">更新</a>&nbsp;<a href="javascript:void(0);" onclick="javascript:quadJS.BatUser.delBat({$item['batId']},this);">删除</a></td>
+    </tr>
+{/template}

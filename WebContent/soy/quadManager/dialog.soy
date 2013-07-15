@@ -1,0 +1,19 @@
+{namespace quadManager}
+/**
+ * 模态窗
+ * @param html 模态窗　内容
+ * @param title 标题
+ */
+{template .dialog}
+<div class="dialog" id="quadManagerDialog">
+
+<div class="dialog-content">
+<div class="dialog-content-head">
+	<h1 id="dialogContentTitle">{$title}</h1><a href="javascript:void(0);" class="close" id="dialog-close">关闭</a>
+</div>
+<div id="dialog-content-ele">
+{$html}
+</div>
+</div>
+</div>
+{/template}
