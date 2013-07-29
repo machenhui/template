@@ -11,6 +11,8 @@ response.setHeader("content-type", "text/css");
 String configFileName = request.getParameter("config");
 CSSCompiler_1 jsc = new CSSCompiler_1(rootPath);
 LinkedHashMap<String,String> params = new LinkedHashMap<String,String>();
+/* params.put("output-renaming-map-format", "CLOSURE_UNCOMPILED"); */
+params.put("rename", "NONE");
 LinkedList<String> cssFiles = new LinkedList<String>();
 String basePath = rootPath+File.separator+"gss"+File.separator;
 

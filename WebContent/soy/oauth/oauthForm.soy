@@ -14,8 +14,8 @@
 	
    {if $userMessage['isLogin']}
      <div id="buttons" class="buttons">  
-		<p class="swip_user">以<a href="{$swipUserURL}">{$userName}</a>帐号登录</p> 
-    	<a class="cancel button">取消</a>
+		<p class="swip_user">以<a {if $swipUserURL}href="{$swipUserURL}"{/if}>{$userName}</a>帐号登录</p> 
+    	<a class="cancel button" {if $cancelURL}href="{$cancelURL}"{/if}>取消</a>
     	<input type="submit" value="授权"/>
    </div>
  

@@ -47,7 +47,7 @@ public class JSCompiler extends CompilerBase implements CompilerInterface{
 			}else{
 				resultStr = "压缩异常";
 			}
-		} catch (IOException | InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			resultStr = "压缩异常";
