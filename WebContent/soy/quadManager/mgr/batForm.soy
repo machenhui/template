@@ -1,0 +1,47 @@
+{namespace quadManager.mgr}
+/**
+ * 更新batId
+ * @param batData
+ * @param action 提交地址
+ * @param userList 所有用户的列表
+ */
+{template .batForm}
+<form action="{$action}" method="post">
+	<p>
+	<label>请填写批次ID</label>:
+	<input type="number" value="{if $batData != null}{$batData['batId']}{/if}" placeholder="请填写批次ID" name="batId" {if $batData != null}disabled{/if}/>
+	</p>
+	<p>
+		<label>请填写用户ID</label>:
+		<textarea type="text" placeholder="请填写用户ID"  id="userIdInput">
+		</textarea>
+		<a href="javascript:void(0)" onclick="quadJS.BatUser.addUser({if $batData != null}{$batData['batId']}{else}''{/if},this,true);">添加(直接输入uid","分隔)</a>
+		
+	</p>
+	<p>
+		<label>请填选择用户</label>:
+		<input type="text" placeholder="选择用户" list="usersList" id="userIdSelect"/>
+		{call .batUserList}
+			{param userList:$userList /}
+		{/call}
+		<a href="javascript:void(0)" onclick="quadJS.BatUser.addUser({if $batData != null}{$batData['batId']}{else}''{/if},this);">添加(搜索用户名，并添加)</a>
+	</p>
+	
+	<table class="user-ids">
+	  <thead>
+	  </thread>
+	  <tbody id="userIdsList">
+	  {if $batData != null}
+	  {foreach $ui in $batData['uInfos']}
+	  	  {call .batUserItem }
+	  	  	{param userInfo:$ui /}
+	  	  	{param batId:$batData['batId'] /}
+	  	  {/call}
+	  	{ifempty}
+	  		"暂无记录"
+	  {/foreach}
+	  {/if}
+	  </tbody>
+	</table>
+</form>
+{/template}

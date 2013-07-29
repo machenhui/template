@@ -47,13 +47,20 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+<<<<<<< HEAD
 		<nature>org.lejos.nxt.ldt.leJOSNature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
-		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
-		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
-		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+=======
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+>>>>>>> 7250c6b1742cc7c8642d03d59a97e2617b1894d3
+		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+		<nature>net.vtst.ow.eclipse.soy.nature</nature>
+		<nature>org.lejos.nxt.ldt.leJOSNature</nature>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
+		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
 </projectDescription>

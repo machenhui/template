@@ -1,0 +1,36 @@
+
+audio{
+	width:8em;
+	vertical-align:middle;
+}
+
+audio+.controls{
+	background:#9dc0c3;
+	width:8em;
+	height:2em;
+	display:inline-block;
+	vertical-align:middle;
+	border-radius:10px;
+	margin-right:.5em;
+}
+
+audio+.controls::before{
+	content:"";
+	vertical-align:middle;
+	display:inline-block;
+	height:100%;
+	width:2em; 
+	background:url(/image/playICON.png) center center no-repeat;
+	margin-left:1em;	
+}
+
+audio+.controls.stop::before{
+	content:"";
+	vertical-align:middle;
+	display:inline-block;
+	height:100%;
+	width:2em; 
+	background:url(/image/stopICON.png) center center no-repeat;
+	margin-left:1em;
+}
+

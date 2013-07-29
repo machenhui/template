@@ -1,0 +1,32 @@
+{namespace quad}
+/**
+ * Tab 切换功能的 Feed 切换列表
+ * @param feedList feedList 首屏数据
+ * @param userJoin 参与的Feed 
+ */
+{template .cardView}
+<div class="card-container">
+//导航
+<nav class="card-title-container" >
+	<a class="card-title current" cardSelector="#card1">Feed</a>
+	<a class="card-title" cardSelector="#card2"  >UserJoin</a>
+</nav>
+
+<div class="list-contain">
+<div class="current card" id="card1" index="1">
+{call .searchForm}
+	{param type:1 /}
+	{param feedList:$feedList /}
+{/call}
+</div>
+{if $userJoin}
+<div class="card" id="card2" index="2">
+{call .searchForm}
+	{param type:2 /}
+	{param feedList:$userJoin /}
+{/call}
+</div>
+{/if}
+</div>
+</div>
+{/template}

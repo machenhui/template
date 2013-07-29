@@ -1,0 +1,61 @@
+
+.card-container{
+	margin-top:1em;
+}
+
+/*导航部分*/
+.card-container nav{
+	margin:7px 0px;
+	position:relative;
+	bottom:0px;
+	z-index:1;
+}
+
+.card-container nav .card-title{
+	/* border:1px solid #666; */
+	padding:.2em .8em;
+	-webkit-box-sizing:border-box;
+	/*border-radius:5px 5px 0px 0px;
+	 background-color:ACTIVE_COLOR; */
+	-webkit-box-shadow:0px 0px 1px 0px #ccc;
+	color:#737373;
+	cursor:pointer;
+	margin:0px .5em;
+}
+.card-container nav .card-title:hover{
+	 /* background-color:ACTIVE_COLOR; */
+	 border-bottom:4px solid ACTIVE_COLOR;
+	 color:#262626;
+}
+.card-container nav .card-title:not(:first-of-type){
+	margin:0px .5em;
+}
+ .card-container nav .card-title:active{
+	background-color:BTN_ACTIVE_COLOR;
+	border-bottom:4px solid BTN_ACTIVE_COLOR;
+	color:#fff;
+} 
+
+
+.card-container nav .card-title.current{
+	/* background-color:#fff;
+	border-bottom:1px solid #fff; */
+	color:#000;
+	font-weight:bold;
+	border-bottom:4px solid BTN_ACTIVE_COLOR;
+}
+
+.card-container .list-contain{
+	/* border:1px solid #666;	 */
+	overflow-x:hidden;
+	position:relative;
+	
+	background-color:#fff;
+}
+
+.card-container .list-contain .card{
+	display:none;
+}
+.card-container .list-contain .card.current{
+	display:block;
+}

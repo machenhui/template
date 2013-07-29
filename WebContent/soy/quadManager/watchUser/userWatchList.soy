@@ -1,0 +1,48 @@
+{namespace quadManager.watchUser}
+/**
+ * @param list mgr 列表
+ * @param currentPage 当前的页码
+ * @param totalPage 共多少页
+ * @param user 当前用户
+ */
+{template .userWatchList}
+<div class="userWatchList-head">	
+ 	{if $user != null}
+ 	<img src="{$user['headURL']}" alt="{$user['userName']}" class="head-icon"/>
+ 	<span>{$user['userName']}</span>
+ 	<a href="javascript:void(0);" onclick="javascript:quadJS.WatchUser.watch({$user['userId']},this);">刷新</a> 	
+ 	{/if}
+ 	<span>第<input type="number" value="{$currentPage+1}"/>页，共{$totalPage+1}页</span>
+ 	<span><input type="submit" value="查询" /></span>
+ </div>
+<table class="mgr-list">
+<thead>
+<tr>
+ <td>日期</td>
+// <td>Method</td>
+ <td>请求接口</td>
+ <td>返回数据</td>
+// <td>错误码</td>
+</tr>
+</thead>
+<tbody id="watchUserListContainer">
+{if $list != null }
+{foreach $item in $list}
+	{if $item != null}
+    {call .userWatchItem}
+    	{param item:$item /}
+    {/call}
+    {/if}
+	{ifempty}
+{/foreach}
+{/if}
+</tbody>
+<tfoot>
+<tr>
+	<td>
+	
+	</td>
+</tr>
+</tfoot>
+</table>
+{/template}

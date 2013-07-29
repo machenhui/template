@@ -1,0 +1,24 @@
+{namespace quadManager.qtChat}
+/**
+ * @param action 请求地址
+ */
+{template .chatForm}
+<form action="{$action}" method="post" id="">
+<h2>quadTeam向指定用户发送信息</h2>
+<filedset>
+	<legend>发送用户的ID,只能填唯一的一个用户ID(1001 quadTeamID)</legend>
+	<input type="number" placeholder="请填写用户ID" name="sendUserID" required/>
+</filedset>
+<filedset>
+<legend>要发送的用户(941231,997874),逗号分隔</legend>
+<textarea name="toUserIds" placeholder="请填写要发送的用户" required></textarea>
+</filedset>
+<filedset>
+<legend>要发送的信息</legend>
+<textarea name="msgContent" placeholder="请填写要发送的信息"></textarea>
+</filedset>
+<p>
+<input type="submit" value="发送" />
+</p>
+</form>
+{/template}

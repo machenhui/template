@@ -1,0 +1,34 @@
+{namespace quad}
+/**
+ * 主体框架页面
+ * @param user 当前用户
+ * @paradm feedList feed列表
+ * 
+ * @paradm userPublish
+ * @paradm userJoin
+ * 
+ * @param feedItem
+ * @param infoList
+ * 
+ */
+{template .main}
+	{call .header}
+		{param user:$user /}
+	{/call} 
+	//feed 的卡片布局
+//	{call .cardView}
+//		{param feedList:$feedList /}
+//		{param userJoin:$feedList /}
+//	{/call} 
+
+//	{call .profile}
+//	  {param user:$user /}
+//	  {param userPublish:$userPublish /}
+//	  {param userJoin:$userJoin /}
+//	{/call}
+	
+	{call .feedInfo}
+		{param feedItem:$feedItem /}
+		{param infoList:$infoList /}
+	{/call}
+{/template}

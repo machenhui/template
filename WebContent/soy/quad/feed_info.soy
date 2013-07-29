@@ -1,0 +1,69 @@
+{namespace quad}
+/**
+ * feed 详情页面
+ * @param feedItem 单个feed
+ * @param infoList 对于这个Feed 的 信息列表
+ */
+{template .feedInfo}
+<div class="container">
+
+<div class="left">
+<section class="user-info-card">	
+	{call .feed_item }		
+		{param feed:$feedItem /}
+	{/call}	
+</section>
+<section class="guess-card">
+	<header>Guesses(3)</header>
+	<ul class="guess-list">
+		<li>
+			<img src="http://hdn.xnimg.cn/photos/hdn421/20121017/2125/h_tiny_uKuW_355f000023331375.jpg" alt="信念"/>
+			<div class="info">
+				<p>1次</p>
+				<a href="">马晨辉</a>
+			</div>
+		</li>
+	</ul>
+</section>
+
+<section class="join-card">
+	<header>Participants(4)</header>
+	<ul class="join-list">
+		<li>
+			<img src="http://hdn.xnimg.cn/photos/hdn421/20121017/2125/h_tiny_uKuW_355f000023331375.jpg" alt="信念"/>
+			<div class="info">
+				<a href="">马晨辉</a>
+			</div>
+		</li>
+	</ul>
+</section>
+</div>
+
+<section class="list-info-card right">
+	<ul>
+		{foreach $item in $infoList}
+			{call .listItem data="$item"}
+			{/call}
+			{ifempty}
+			   没有您要查看的信息
+		{/foreach}
+	</ul>
+</section>
+
+</div>
+
+{/template}
+
+/**
+ * 信息列表的模板
+ * @param icon 用户头像
+ */
+{template .listItem}
+	<li>
+		<img src="{$icon}" alt=""/>
+		<div>
+			<p><a href="">用户E</a>承认自己是作者</p>
+			<p class="time">2013-2-1 1:45</p>
+		</div>
+	</li>
+{/template}

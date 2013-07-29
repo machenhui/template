@@ -1,0 +1,44 @@
+{namespace quad}
+/**
+ * feed 聚合页面的feedItem 的信息展示
+ * @param feed
+ */
+{template .feed_item}
+<div class="feed-item" id="{$feed['id']}">
+    <img src="{$feed['src']}" class="img" bigImage="{$feed['src']}"/>
+	<div class="align-left">
+		<div class="user-info">
+			//作者头像
+			<a class="icon" _src="{$feed['user']['icon']}" alt="{$feed['user']['name']}" style="background-image:url({$feed['user']['icon']});"></a>
+
+			<div class="message">
+				//作者姓名
+				<a href="profile.html" title="{$feed['user']['name']}"> {$feed['user']['name']}</a>
+				//feed 发布日期
+				<p class="gray">{$feed['date']}</p>
+			</div>
+		</div>
+
+		//如果有声音
+		<div>
+ 			 <audio  preload="none" loop>
+ 			 	<source src="{$feed['music_src']}.mp3" type="audio/mpeg">
+ 			 	<source src="{$feed['music_src']}.webm" type="audio/webm">
+ 			 	<source src="{$feed['music_src']}.ogg" type="audio/ogg">
+ 			 </audio>
+ 			 <div class="controls" onclick=""></div>
+ 			 <span>10times</span>
+		</div>
+
+		//是否已自首
+		<p class="red">recognized</p>
+		<p>Participants({$feed['join_num']})</p>
+		<p>Chats({$feed['talk_num']})</p>
+		<p>Guess({$feed['guess_num']})</p>
+
+		<div class="feed-info">
+   			<a href="feedInfo.html" >&gt;&gt;Detail</a>
+		</div>
+	</div>
+</div>
+{/template}

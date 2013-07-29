@@ -1,0 +1,13 @@
+{namespace quadManager.mgr}
+/**
+ * @param batId
+ * @param userInfo
+ */
+{template .batUserItem}
+ 	<tr>
+ 		<td><img src="{$userInfo['headURL']}" alt="{$userInfo['userName']}" class="head-icon"></td> 		
+ 		<td><a href="javascript:void(0);"> {$userInfo['userName']}</a></td>
+ 		<td>{$userInfo['userId']}</td>
+ 		<td><a href="javascript:void(0);" onclick="quadJS.BatUser.showDelUser({$batId},{$userInfo['userId']},this)">删除</a></td>
+ 	</tr>
+{/template}

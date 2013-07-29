@@ -1,0 +1,38 @@
+{namespace quadManager.mgr}
+/**
+ * @param list mgr 列表
+ * @param currentPage 当前的页码
+ * @param totalPage 共多少页
+ */
+{template .batList}
+<div>
+	<span>第<input type="number" value="{$currentPage+1}"/>页，共{$totalPage+1}页</span>
+ 	<span><input type="submit" value="查询" /></span>
+ 	<a href="javascript:void(0);" onclick="javascript:quadJS.BatUser.showAdd();">新增</a>
+ </div>
+<table class="mgr-list">
+<thead>
+<tr>
+ <td>batId</td>
+ <td>操作</td>
+</tr>
+</thead>
+<tbody id="batListContainer">
+{if $list != null }
+{foreach $item in $list}
+    {call .batListItem }
+    	{param item:$item /}
+    {/call}
+	{ifempty}
+{/foreach}
+{/if}
+</tbody>
+<tfoot>
+<tr>
+	<td>
+	
+	</td>
+</tr>
+</tfoot>
+</table>
+{/template}

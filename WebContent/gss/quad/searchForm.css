@@ -1,0 +1,149 @@
+.red{
+	color:red;
+}
+
+.search-form{
+     /* text-align:center;  */
+    -webkit-box-sizing:border-box;
+}
+
+.search-form fieldset{
+	padding:.5em 1em;
+	border:0px;
+	border-bottom:1px solid #ccc;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="num"]{
+    border-radius:5px;
+}
+
+select,
+input[type="submit"],
+input[type="text"],
+input[type="datetime-local"],
+input[type="checkbox"],
+input[type="num"],
+input[type="radio"]{
+	padding:0.3em 0.5em;
+	margin:0px .5em;
+	outline:0px;
+}
+
+
+/*feed-item*/
+.list .feed-item{
+	display:inline-block;
+	/* margin:5px; */
+	margin:5px 2px;
+	text-align:center;
+	/* width:246px; */
+	width:200px;
+	border:1px solid #ccc;
+	 padding:.5em; 
+	 
+}
+.feed-item{
+	text-align:center;
+	border:1px solid #666;
+	padding:.5em; 	
+	 -moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.align-left{
+	text-align:left;
+}
+.feed-item .img{
+	/* width:228px; */
+	width:180px;
+}
+.feed-item .icon{
+	width:50px;
+	height:50px;
+	display:inline-block;
+	background-size:100% auto;
+}
+.user-info{
+	display:-webkit-box;
+	display:-moz-box;
+	-webkit-box-orient:horizontal;
+	-moz-box-orient:horizontal;
+}
+.user-info .message{
+	margin-left:.5em;
+}
+.user-info .message a{
+	margin:1em 0px;
+	display:block;
+}
+.user-info .message p{
+    font-size:.8em;	
+    color:#ccc;
+}
+.feed-info{
+	text-align:right;
+}
+.feed-info a{
+	padding:.2em .5em;
+}
+.feed-info a:hover{
+	background-color:ACTIVE_COLOR;
+	color:#fff;
+}
+.feed-info a:active{
+	background-color:BTN_ACTIVE_COLOR;
+	color:#fff;
+}
+/*翻页条*/
+.page-bar{
+	text-align:center;
+	margin:.8em auto;
+}
+
+.page-num{
+	padding:.3em .5em;
+	text-decoration:none;
+}
+.page-num.current{
+	background-color: BTN_ACTIVE_COLOR ;
+	color:#fff;
+}
+.page-num.up,
+.page-num.down{
+	font-weight:bold;
+}
+.page-num:hover{
+	background-color:ACTIVE_COLOR;
+	color:#fff;
+}
+.page-bar span{
+	margin:auto .8em;
+}
+.page-num-input{
+	width:2em;
+}
+
+/*
+ @media screen and (min-device-width:768px) and (max-device-width:1024px) and (orientation: portrait){
+	  .search-form fieldset,
+	  .list-container{
+			width:730px;
+	  }	
+	  
+	  .feed-item .img{
+	  	   width:330px;
+	  }
+	} */
+@media screen and (min-device-width:1280px){
+	.list .feed-item{
+		margin:5px 8px;
+		width:222px;
+	}
+	.feed-item .img{
+		width:202px;
+	}
+}
+

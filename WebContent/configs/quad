@@ -1,0 +1,13 @@
+quad/login.soy
+quad/searchForm.soy
+quad/feed_item.soy
+quad/logout.soy
+quad/person.soy
+quad/feed_info.soy
+quad/main.soy
+quad/feedCard.soy
+quad/converImage.soy
+
+quad/_main.soy
+quad/_profile.soy
+quad/_feedInfo.soy

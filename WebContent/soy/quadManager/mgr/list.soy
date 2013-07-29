@@ -1,0 +1,45 @@
+{namespace quadManager.mgr}
+/**
+ * @param list mgr 列表
+ * @param currentPage 当前的页码
+ * @param totalPage 共多少页
+ */
+{template .list}
+<div>
+	<span>第<input type="number" value="{$currentPage+1}"/>页，共{$totalPage+1}页</span>
+ 	<span><input type="submit" value="查询" /><a href="javascript:void(0);" onclick="Mgr.showUpdateForm();">新建</a></span>
+ </div>
+<table class="mgr-list">
+<thead>
+<tr>
+ <td>AppId</td>
+ <td>batId</td>
+ <td>clientVersion(客户端版本)</td>
+ <td>lastestVersion(最新版本)</td>
+ <td>升级方式</td>
+ //<td>名称</td>
+ //<td>渠道ID</td>
+ //<td>操作系统</td>
+ <td>操作</td>
+
+</tr>
+</thead>
+<tbody id="mgrListContainer">
+{if $list != null}
+{foreach $item in $list}
+    {call .mgrListItem}
+    	{param item:$item /}
+    {/call}
+	{ifempty}
+{/foreach}
+{/if}
+</tbody>
+<tfoot>
+<tr>
+	<td>
+	
+	</td>
+</tr>
+</tfoot>
+</table>
+{/template}

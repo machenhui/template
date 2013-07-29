@@ -1,0 +1,17 @@
+{namespace jingwei}
+/**
+ * tab 切换模板
+ * @param images
+ * @param titles
+ */
+{template .Tab}
+	<div class="controls">
+    {foreach $title in $titles}
+    	<a href="#" class="title" index="{index($title)}">{$title}</a>
+    	{ifempty}
+    {/foreach}
+    </div>
+	{call .Slide}
+		{param images:$images/}
+	{/call}
+{/template}

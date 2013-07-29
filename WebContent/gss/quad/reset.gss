@@ -1,0 +1,22 @@
+html,body{
+  display:block;
+  height:100%;
+  margin:0px;
+  padding:0px;
+  font-family:Avenir,roman;
+}
+
+ul{
+  list-style-type:none;
+  padding:0px;
+  margin:0px;
+}
+
+p{
+  margin:0px;
+}
+
+a{
+	text-decoration:none;
+}
+

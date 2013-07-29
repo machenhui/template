@@ -1,0 +1,16 @@
+{namespace quadManager.push}
+/**
+ * @param action 提交地址
+ * @param id 记录ID
+ * @param pluginDesc 
+ * @param pluginType
+ */
+{template .form}
+<form action="{$action}" method="post">
+<input type="hidden" name="id" value="{if $id != null}{$id}{/if}" />
+<p><input type="number" name="pluginType" placeholder="请填写plugin类型" value="{if $pluginType != null}{$pluginType}{/if}"/></p>
+<p><input type="text" name="pluginDesc" placeholder="请填写plugin描述" value="{if $pluginDesc != null}{$pluginDesc}{/if}"/></p>
+<p class="submit"><input type="submit" value="{if $id != null}更新{else}添加{/if}"　/></p>
+
+</form>
+{/template}

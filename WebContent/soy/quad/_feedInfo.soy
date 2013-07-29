@@ -1,0 +1,19 @@
+{namespace quad}
+/**
+ * 主体框架页面
+ * @param user 当前用户
+ * 
+ * @param feedItem
+ * @param infoList
+ * 
+ */
+{template .main_feedInfo}
+	{call .header}
+		{param user:$user /}
+	{/call}
+	
+	{call .feedInfo}
+		{param feedItem:$feedItem /}
+		{param infoList:$infoList /}
+	{/call}
+{/template}

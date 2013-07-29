@@ -1,0 +1,31 @@
+.conver{
+	position:fixed;
+	top:0px;
+	width:100%;
+	text-align:center;
+	background-color:rgba(0,0,0,.7);
+	height:100%;
+	display:-webkit-box;
+	-webkit-box-align:center;
+	-webkit-box-orient:horizontal;
+	z-index:10;
+}
+.conver .close{
+	position:absolute;
+	height:2em;
+	width:2em;
+    background:url(/image/close.png);
+    top:-1em;
+    right:-1em;
+    -webkit-background-size:100% 100%;
+    cursor:pointer;
+}
+
+.image-conver{
+	margin:auto;
+	position:relative;
+	
+}
+
+
+

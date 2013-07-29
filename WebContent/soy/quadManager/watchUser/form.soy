@@ -1,0 +1,13 @@
+{namespace quadManager.watchUser}
+/**
+ * @param action 提交地址
+ * @param id 记录ID
+ */
+{template .form}
+<form action="{$action}" method="post">
+
+<p><input type="number" name="uid" placeholder="请填写用户id"/></p>
+<p class="submit"><input type="submit" value="{if $id != null}更新{else}添加{/if}"　/></p>
+
+</form>
+{/template}

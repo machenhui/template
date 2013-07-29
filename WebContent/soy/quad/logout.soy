@@ -1,0 +1,21 @@
+{namespace quad}
+
+/**
+ * 页面头部
+ *  @param user 当前登录用户
+ */
+{template .header}
+	<header class="scroll">
+		<a class="logo" href="/quad/main.html" title="back to home page"></a>
+		<a href="/quad/main.html" class="btn">Home</a>
+		<a href="" class="btn">User Information System</a>
+		<a href="" class="btn">Content Management System</a>
+		
+		<form>		 	    			
+			<input type="num" class="search-box" placeholder="UID/FEED_ID" />
+			<input type="submit" value="User" />
+			<input type="submit" value="Feed" />
+			<a href="" class="btn" title="{$user['name']}">Sign Out</a>
+		</form>
+	</header>
+{/template}

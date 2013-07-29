@@ -1,0 +1,11 @@
+/*定义链接的颜色*/
+@def ACTIVE_COLOR   rgb(250,105,99);
+@def BTN_ACTIVE_COLOR  #d55954;
+
+/*定义字体大小*/
+@def FONT_SMALL  18px;
+@def FONT_MEDIUM  24px;
+@def FONT_MEDIUM_1  26px;
+@def FONT_MEDIUM_2  28px;
+@def FONT_MEDIUM_3  30px;
+@def FONT_LARGE  32px;
