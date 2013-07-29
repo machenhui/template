@@ -1,0 +1,7 @@
+@defmixin boxShadow(BOX_SHADOW) {
+	box-shadow: BOX_SHADOW;
+	/* @alternate */ -moz-box-shadow:    BOX_SHADOW;
+	/* @alternate */ -ms-box-shadow:     BOX_SHADOW;
+	/* @alternate */ -o-box-shadow:      BOX_SHADOW;
+	/* @alternate */ -webkit-box-shadow: BOX_SHADOW;
+}

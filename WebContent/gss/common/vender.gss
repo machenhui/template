@@ -1,0 +1,7 @@
+
+@defmixin borderImage(VALUE) {
+	border-image:VALUE;
+	-webkit-border-image:VALUE;
+	-moz-border-image:VALUE;
+	-o-border-image:VALUE;
+}
